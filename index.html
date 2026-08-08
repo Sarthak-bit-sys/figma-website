@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Wilyer — Authentication System</title>
+
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Design System & Auth Stylesheet -->
+    <link rel="stylesheet" href="css/style.css?v=20260806" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+  </head>
+  <body>
+    <!-- Main Split Authentication Layout -->
+    <main class="auth-container">
+      <!-- Left Panel: Contextual Vector Illustration -->
+      <section class="illustration-panel" aria-hidden="true">
+        <!-- 1. LOGIN ILLUSTRATION (Monitor, Key, Character & Clouds - Reference Screens #1, #2, #3) -->
+        <svg
+          class="screen-illustration"
+          data-illustration="login"
+          viewBox="0 0 640 620"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Ground Shadow -->
+          <ellipse
+            cx="330"
+            cy="540"
+            rx="250"
+            ry="42"
+            fill="#ffffff"
+            opacity="0.92"
+          />
+
+          <!-- Clouds -->
+          <g class="cloud-group" fill="#ffffff" opacity="0.9">
+            <rect x="86" y="86" width="70" height="18" rx="9" />
+            <circle cx="96" cy="86" r="13" />
+            <circle cx="116" cy="80" r="16" />
+            <circle cx="140" cy="86" r="11" />
+          </g>
+          <g class="cloud-group delay" fill="#ffffff" opacity="0.75">
+            <rect x="470" y="60" width="60" height="16" rx="8" />
+            <circle cx="480" cy="60" r="11" />
+            <circle cx="498" cy="55" r="14" />
+            <circle cx="518" cy="60" r="9" />
+          </g>
+
+          <!-- Monitor Workstation -->
+          <g transform="rotate(-7 300 260)">
+            <rect
+              x="90"
+              y="90"
+              width="360"
+              height="280"
+              rx="18"
+              fill="#0e1b3d"
+            />
+            <rect
+              x="112"
+              y="112"
+              width="316"
+              height="236"
+              rx="10"
+              fill="#f3f7ff"
+            />
+            <rect
+              x="112"
+              y="112"
+              width="316"
+              height="12"
+              rx="6"
+              fill="#2f6bf5"
+            />
+
+            <!-- Avatar -->
+            <circle cx="270" cy="176" r="26" fill="#1957e8" />
+            <circle cx="270" cy="168" r="8" fill="#ffffff" />
+            <path d="M252,196 a18,14 0 0 1 36,0 z" fill="#ffffff" />
+
+            <!-- Input Bar Mock -->
+            <rect
+              x="160"
+              y="236"
+              width="220"
+              height="32"
+              rx="8"
+              fill="#e4eaf6"
+            />
+            <rect x="176" y="249" width="90" height="6" rx="3" fill="#b9c3da" />
+
+            <!-- Login Button Mock -->
+            <rect
+              x="160"
+              y="284"
+              width="220"
+              height="34"
+              rx="8"
+              fill="#182a54"
+            />
+            <rect
+              x="176"
+              y="296"
+              width="110"
+              height="6"
+              rx="3"
+              fill="#5b6c98"
+            />
+            <rect
+              x="345"
+              y="294"
+              width="14"
+              height="12"
+              rx="2"
+              fill="#6693fb"
+            />
+            <path
+              d="M348,294 v-5 a4,4 0 0 1 8,0 v5"
+              fill="none"
+              stroke="#6693fb"
+              stroke-width="2.5"
+            />
+          </g>
+
+          <!-- Large Key -->
+          <g transform="rotate(36 388 336)">
+            <circle cx="388" cy="336" r="34" fill="#6693fb" />
+            <circle cx="388" cy="336" r="15" fill="#3f7bf6" />
+            <rect
+              x="380"
+              y="336"
+              width="16"
+              height="128"
+              rx="6"
+              fill="#6693fb"
+            />
+            <rect
+              x="380"
+              y="434"
+              width="30"
+              height="12"
+              rx="3"
+              fill="#6693fb"
+            />
+            <rect
+              x="380"
+              y="452"
+              width="22"
+              height="12"
+              rx="3"
+              fill="#6693fb"
+            />
+          </g>
+
+          <!-- Character Holding Key -->
+          <g>
+            <rect
+              x="438"
+              y="384"
+              width="18"
+              height="72"
+              rx="9"
+              fill="#182a54"
+            />
+            <rect
+              x="470"
+              y="384"
+              width="18"
+              height="72"
+              rx="9"
+              fill="#182a54"
+            />
+            <ellipse cx="447" cy="460" rx="15" ry="8" fill="#0e1b3d" />
+            <ellipse cx="479" cy="460" rx="15" ry="8" fill="#0e1b3d" />
+            <rect
+              x="428"
+              y="322"
+              width="16"
+              height="64"
+              rx="8"
+              fill="#1957e8"
+              transform="rotate(28 436 322)"
+            />
+            <rect
+              x="428"
+              y="302"
+              width="68"
+              height="88"
+              rx="24"
+              fill="#1957e8"
+            />
+            <rect
+              x="480"
+              y="322"
+              width="16"
+              height="64"
+              rx="8"
+              fill="#1957e8"
+              transform="rotate(-30 488 322)"
+            />
+            <circle cx="462" cy="278" r="26" fill="#ffb599" />
+            <path
+              d="M436,270 Q462,236 488,270 Q488,252 462,250 Q436,252 436,270 Z"
+              fill="#1c2333"
+            />
+            <circle cx="454" cy="280" r="2" fill="#26324a" />
+            <circle cx="470" cy="280" r="2" fill="#26324a" />
+          </g>
+
+          <!-- Decorative Plant -->
+          <g fill="#a1bffc">
+            <path
+              d="M556,478 Q580,436 604,448 Q586,470 556,478 Z"
+              opacity="0.85"
+            />
+            <path
+              d="M556,478 Q540,444 512,452 Q534,470 556,478 Z"
+              opacity="0.6"
+            />
+          </g>
+        </svg>
+
+        <!-- 2. SIGN UP ILLUSTRATION -->
+        <svg
+          class="screen-illustration"
+          data-illustration="signup"
+          viewBox="0 0 640 620"
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: none"
+        >
+          <ellipse
+            cx="320"
+            cy="530"
+            rx="240"
+            ry="38"
+            fill="#ffffff"
+            opacity="0.9"
+          />
+          <!-- Onboarding Dashboard Board -->
+          <rect
+            x="120"
+            y="120"
+            width="380"
+            height="280"
+            rx="16"
+            fill="#0e1b3d"
+          />
+          <rect
+            x="140"
+            y="140"
+            width="340"
+            height="240"
+            rx="8"
+            fill="#ffffff"
+          />
+          <!-- Header -->
+          <rect x="160" y="165" width="120" height="14" rx="4" fill="#0d6efd" />
+          <rect x="160" y="195" width="300" height="8" rx="4" fill="#e2e8f0" />
+          <rect x="160" y="215" width="240" height="8" rx="4" fill="#e2e8f0" />
+          <!-- Account Card Badges -->
+          <rect
+            x="160"
+            y="250"
+            width="140"
+            height="100"
+            rx="8"
+            fill="#e9f0ff"
+          />
+          <circle cx="230" cy="285" r="18" fill="#2f6bf5" />
+          <rect x="180" y="315" width="100" height="8" rx="4" fill="#2f6bf5" />
+          <rect
+            x="320"
+            y="250"
+            width="140"
+            height="100"
+            rx="8"
+            fill="#f1f5f9"
+          />
+          <circle cx="390" cy="285" r="18" fill="#10b981" />
+          <rect x="340" y="315" width="100" height="8" rx="4" fill="#10b981" />
+          <!-- Character -->
+          <circle cx="480" cy="440" r="32" fill="#ffb599" />
+          <path d="M440,430 Q480,390 520,430" fill="#1c2333" />
+          <rect x="450" y="472" width="60" height="80" rx="20" fill="#2f6bf5" />
+        </svg>
+
+        <!-- 3. FORGOT PASSWORD ILLUSTRATION (Confused User & Password Window - Reference Screen #4) -->
+        <svg
+          class="screen-illustration"
+          data-illustration="forgot"
+          viewBox="0 0 640 620"
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: none"
+        >
+          <!-- Oval Shadow -->
+          <ellipse
+            cx="250"
+            cy="510"
+            rx="230"
+            ry="45"
+            fill="#ffffff"
+            opacity="0.92"
+          />
+
+          <!-- Question Marks -->
+          <g
+            fill="#ffffff"
+            opacity="0.95"
+            font-family="Nunito, sans-serif"
+            font-weight="900"
+          >
+            <text
+              x="235"
+              y="215"
+              font-size="34"
+              transform="rotate(-15 235 215)"
+            >
+              ?
+            </text>
+            <text x="270" y="245" font-size="28" transform="rotate(10 270 245)">
+              ?
+            </text>
+            <text x="245" y="275" font-size="22" transform="rotate(-5 245 275)">
+              ?
+            </text>
+          </g>
+
+          <!-- Dark Password Dialog Screen -->
+          <g transform="rotate(-5 350 380)">
+            <rect
+              x="290"
+              y="250"
+              width="220"
+              height="260"
+              rx="14"
+              fill="#2b323b"
+            />
+            <!-- Speech Pointer Bubble -->
+            <polygon points="290,380 260,370 290,410" fill="#2b323b" />
+
+            <!-- Avatar Badge inside Dialog -->
+            <circle cx="400" cy="315" r="26" fill="#0d6efd" />
+            <circle cx="400" cy="307" r="9" fill="#ffffff" />
+            <path d="M382,333 a18,14 0 0 1 36,0 z" fill="#ffffff" />
+
+            <!-- PASSWORD text label -->
+            <text
+              x="400"
+              y="365"
+              font-size="14"
+              font-weight="800"
+              fill="#ffffff"
+              text-anchor="middle"
+              letter-spacing="1"
+            >
+              PASSWORD
+            </text>
+
+            <!-- Input placeholder bar -->
+            <rect
+              x="320"
+              y="390"
+              width="160"
+              height="20"
+              rx="6"
+              fill="#ffffff"
+            />
+            <!-- Action Button -->
+            <rect
+              x="335"
+              y="430"
+              width="130"
+              height="24"
+              rx="6"
+              fill="#0d6efd"
+            />
+          </g>
+
+          <!-- Confused Woman Character -->
+          <g>
+            <!-- Plants on left & right -->
+            <path d="M50,510 Q70,440 95,465 Q75,495 50,510 Z" fill="#6693fb" />
+            <path
+              d="M410,500 Q430,440 450,465 Q430,495 410,500 Z"
+              fill="#6693fb"
+            />
+
+            <!-- Legs -->
+            <rect
+              x="168"
+              y="420"
+              width="18"
+              height="90"
+              rx="9"
+              fill="#2b323b"
+            />
+            <rect
+              x="200"
+              y="420"
+              width="18"
+              height="90"
+              rx="9"
+              fill="#2b323b"
+            />
+            <ellipse cx="177" cy="510" rx="16" ry="7" fill="#1c2333" />
+            <ellipse
+              cx="230"
+              cy="495"
+              rx="16"
+              ry="7"
+              fill="#1c2333"
+              transform="rotate(-15 230 495)"
+            />
+
+            <!-- Body / Torso -->
+            <path
+              d="M170,305 C170,305 240,305 240,305 C240,345 230,430 230,430 C230,430 170,430 170,430 Z"
+              fill="#81b6ff"
+            />
+            <path d="M170,305 L240,305 L235,350 L175,350 Z" fill="#a5c9ff" />
+
+            <!-- Left Arm Scratching Head -->
+            <path
+              d="M175,320 Q130,290 175,255 Q185,270 175,320 Z"
+              fill="#ff9d85"
+            />
+
+            <!-- Right Arm Holding Phone -->
+            <path
+              d="M235,320 Q260,350 250,410"
+              fill="none"
+              stroke="#ff9d85"
+              stroke-width="14"
+              stroke-linecap="round"
+            />
+            <rect
+              x="230"
+              y="390"
+              width="25"
+              height="40"
+              rx="4"
+              fill="#0d6efd"
+            />
+
+            <!-- Head & Glasses -->
+            <circle cx="205" cy="275" r="26" fill="#ff9d85" />
+            <path
+              d="M165,275 C165,225 245,225 245,275 C245,245 165,245 165,275 Z"
+              fill="#1c2333"
+            />
+            <ellipse
+              cx="205"
+              cy="278"
+              rx="8"
+              ry="6"
+              fill="none"
+              stroke="#1c2333"
+              stroke-width="2"
+            />
+          </g>
+        </svg>
+
+        <!-- 4. VERIFY OTP ILLUSTRATION -->
+        <svg
+          class="screen-illustration"
+          data-illustration="otp"
+          viewBox="0 0 640 620"
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: none"
+        >
+          <ellipse
+            cx="320"
+            cy="530"
+            rx="220"
+            ry="36"
+            fill="#ffffff"
+            opacity="0.9"
+          />
+          <!-- Smartphone Container -->
+          <rect
+            x="200"
+            y="100"
+            width="240"
+            height="420"
+            rx="28"
+            fill="#0e1b3d"
+          />
+          <rect
+            x="216"
+            y="124"
+            width="208"
+            height="372"
+            rx="16"
+            fill="#ffffff"
+          />
+          <!-- Shield Icon -->
+          <path
+            d="M320,180 L370,205 V260 C370,300 320,330 320,330 C320,330 270,300 270,260 V205 Z"
+            fill="#2f6bf5"
+          />
+          <path
+            d="M305,250 L315,265 L340,235"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+          <!-- Code Dots -->
+          <circle cx="260" cy="380" r="10" fill="#0d6efd" />
+          <circle cx="284" cy="380" r="10" fill="#0d6efd" />
+          <circle cx="308" cy="380" r="10" fill="#0d6efd" />
+          <circle cx="332" cy="380" r="10" fill="#0d6efd" />
+          <circle cx="356" cy="380" r="10" fill="#0d6efd" />
+          <circle cx="380" cy="380" r="10" fill="#0d6efd" />
+          <rect x="250" y="420" width="140" height="32" rx="8" fill="#10b981" />
+        </svg>
+
+        <!-- 5. RESET PASSWORD ILLUSTRATION -->
+        <svg
+          class="screen-illustration"
+          data-illustration="reset"
+          viewBox="0 0 640 620"
+          xmlns="http://www.w3.org/2000/svg"
+          style="display: none"
+        >
+          <ellipse
+            cx="320"
+            cy="530"
+            rx="240"
+            ry="38"
+            fill="#ffffff"
+            opacity="0.9"
+          />
+          <!-- Vault Lock Shield -->
+          <circle cx="320" cy="280" r="120" fill="#0e1b3d" />
+          <circle cx="320" cy="280" r="95" fill="#2f6bf5" />
+          <rect
+            x="280"
+            y="240"
+            width="80"
+            height="100"
+            rx="12"
+            fill="#ffffff"
+          />
+          <path
+            d="M300,240 V210 A20,20 0 0 1 340,210 V240"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="10"
+            stroke-linecap="round"
+          />
+          <circle cx="320" cy="280" r="10" fill="#0e1b3d" />
+          <rect x="316" y="285" width="8" height="24" rx="4" fill="#0e1b3d" />
+        </svg>
+
+        <!-- Dynamic Illustration Caption -->
+        <div class="illustration-caption">
+          <h2 id="illustrationTitle">Seamless Workspace Access</h2>
+          <p id="illustrationDesc">
+            Manage your digital signage, displays, and media content centrally
+            with enterprise-grade security.
+          </p>
+        </div>
+      </section>
+
+      <!-- Right Panel: Authentication Form Wrapper (Max 608px Width Centered) -->
+      <section class="form-panel">
+        <div class="form-wrapper">
+          <!-- Wilyer Brand Logo -->
+          <header class="auth-logo">
+            <svg
+              viewBox="0 0 240 60"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Wilyer Logo"
+            >
+              <!-- Signal Radio Icon -->
+              <path
+                d="M 30,38 A 12,12 0 0,1 30,22"
+                fill="none"
+                stroke="#ef4444"
+                stroke-width="4.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M 24,44 A 20,20 0 0,1 24,16"
+                fill="none"
+                stroke="#ef4444"
+                stroke-width="4.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M 18,50 A 28,28 0 0,1 18,10"
+                fill="none"
+                stroke="#ef4444"
+                stroke-width="4.5"
+                stroke-linecap="round"
+              />
+              <!-- Wilyer Wordmark -->
+              <text
+                x="56"
+                y="44"
+                font-family="Nunito, sans-serif"
+                font-weight="900"
+                font-size="34"
+                fill="#0d6efd"
+                letter-spacing="-0.5"
+              >
+                Wilyer
+                <tspan fill="#0d6efd">.</tspan>
+              </text>
+            </svg>
+          </header>
+
+          <!-- ==================== SCREEN 1: LOGIN ==================== -->
+          <div class="auth-screen active" id="loginScreen">
+            <h1 class="auth-title">Welcome Back!</h1>
+            <p class="auth-subtitle">Please login to your account.</p>
+
+            <form class="auth-form" id="loginForm" novalidate>
+              <!-- Field: Email or Phone -->
+              <div class="form-group">
+                <label class="form-label" for="emailOrPhone"
+                  >Email or Phone<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper">
+                  <input
+                    type="text"
+                    class="auth-input"
+                    id="emailOrPhone"
+                    name="emailOrPhone"
+                    placeholder="Enter your email or phone"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Field: Password -->
+              <div class="form-group">
+                <label class="form-label" for="loginPassword"
+                  >Password<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper password-input-wrapper">
+                  <input
+                    type="password"
+                    class="auth-input"
+                    id="loginPassword"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="toggle-password-btn"
+                    data-for="loginPassword"
+                    aria-label="Show password"
+                  >
+                    <i class="ph ph-eye eye-on-icon"></i>
+                    <i class="ph ph-eye-slash eye-off-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Action Button: Log In (608x44px Spec) -->
+              <button type="submit" class="auth-btn-primary">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Log In</span>
+              </button>
+            </form>
+
+            <!-- Inline Footer Action Links -->
+            <div class="auth-links">
+              <a href="#" data-target-screen="forgot">Forgot Password?</a>
+              <span class="divider">|</span>
+              <span
+                >Don't have an account?
+                <a href="#" data-target-screen="signup">Sign Up</a></span
+              >
+            </div>
+          </div>
+
+          <!-- ==================== SCREEN 2: SIGN UP ==================== -->
+          <div class="auth-screen" id="signupScreen">
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">
+              Start managing your smart screens with Wilyer.
+            </p>
+
+            <form class="auth-form" id="signupForm" novalidate>
+              <!-- Field: Full Name -->
+              <div class="form-group">
+                <label class="form-label" for="signupName"
+                  >Full Name<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper">
+                  <input
+                    type="text"
+                    class="auth-input"
+                    id="signupName"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Field: Email Address -->
+              <div class="form-group">
+                <label class="form-label" for="signupEmail"
+                  >Email Address<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper">
+                  <input
+                    type="email"
+                    class="auth-input"
+                    id="signupEmail"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Field: Phone Number -->
+              <div class="form-group">
+                <label class="form-label" for="signupPhone"
+                  >Phone Number<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper">
+                  <input
+                    type="tel"
+                    class="auth-input"
+                    id="signupPhone"
+                    placeholder="Enter your phone number"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Field: Password -->
+              <div class="form-group">
+                <label class="form-label" for="signupPassword"
+                  >Password<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper">
+                  <input
+                    type="password"
+                    class="auth-input"
+                    id="signupPassword"
+                    placeholder="Create a strong password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Field: Confirm Password -->
+              <div class="form-group">
+                <label class="form-label" for="signupConfirmPassword"
+                  >Confirm Password<span class="required-asterisk"
+                    >*</span
+                  ></label
+                >
+                <div class="auth-input-wrapper">
+                  <input
+                    type="password"
+                    class="auth-input"
+                    id="signupConfirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Checkbox: Terms of Service -->
+              <label class="form-checkbox-label">
+                <input type="checkbox" id="termsCheckbox" required />
+                <span
+                  >I agree to the <a href="#">Terms of Service</a> and
+                  <a href="#">Privacy Policy</a>.</span
+                >
+              </label>
+
+              <!-- Action Button: Create Account (608x44px Spec) -->
+              <button type="submit" class="auth-btn-primary">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Create Account</span>
+              </button>
+            </form>
+
+            <div class="auth-links">
+              <span
+                >Already have an account?
+                <a href="#" data-target-screen="login">Log In</a></span
+              >
+            </div>
+          </div>
+
+          <!-- ==================== SCREEN 3: FORGOT PASSWORD (Matches Reference Screenshot #4) ==================== -->
+          <div class="auth-screen" id="forgotScreen">
+            <h1 class="auth-title">Forgot Password?</h1>
+            <p class="auth-subtitle">
+              Please enter the below details to get OTP on your email.
+            </p>
+
+            <form class="auth-form" id="forgotForm" novalidate>
+              <!-- Field: Email -->
+              <div class="form-group">
+                <label class="form-label" for="forgotEmail"
+                  >Email<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper">
+                  <input
+                    type="email"
+                    class="auth-input"
+                    id="forgotEmail"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Action Button: Send OTP (608x44px Spec) -->
+              <button type="submit" class="auth-btn-primary">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Send OTP</span>
+              </button>
+            </form>
+
+            <div class="auth-links">
+              <span
+                >Don't have an account?
+                <a href="#" data-target-screen="signup">Sign Up</a></span
+              >
+            </div>
+          </div>
+
+          <!-- ==================== SCREEN 4: VERIFY OTP ==================== -->
+          <div class="auth-screen" id="otpScreen">
+            <h1 class="auth-title">Verify Email</h1>
+            <p class="auth-subtitle">
+              We've sent a 6-digit verification code to your email.
+            </p>
+
+            <form class="auth-form" id="otpForm" novalidate>
+              <!-- 6-Digit OTP Box Grid -->
+              <div class="otp-container">
+                <input
+                  type="text"
+                  class="otp-box"
+                  maxlength="1"
+                  pattern="\d*"
+                  inputmode="numeric"
+                  required
+                  aria-label="OTP Digit 1"
+                />
+                <input
+                  type="text"
+                  class="otp-box"
+                  maxlength="1"
+                  pattern="\d*"
+                  inputmode="numeric"
+                  required
+                  aria-label="OTP Digit 2"
+                />
+                <input
+                  type="text"
+                  class="otp-box"
+                  maxlength="1"
+                  pattern="\d*"
+                  inputmode="numeric"
+                  required
+                  aria-label="OTP Digit 3"
+                />
+                <input
+                  type="text"
+                  class="otp-box"
+                  maxlength="1"
+                  pattern="\d*"
+                  inputmode="numeric"
+                  required
+                  aria-label="OTP Digit 4"
+                />
+                <input
+                  type="text"
+                  class="otp-box"
+                  maxlength="1"
+                  pattern="\d*"
+                  inputmode="numeric"
+                  required
+                  aria-label="OTP Digit 5"
+                />
+                <input
+                  type="text"
+                  class="otp-box"
+                  maxlength="1"
+                  pattern="\d*"
+                  inputmode="numeric"
+                  required
+                  aria-label="OTP Digit 6"
+                />
+              </div>
+
+              <div class="otp-timer">
+                Resend OTP in <strong id="otpTimerDisplay">60s</strong>
+              </div>
+
+              <!-- Action Button: Verify & Proceed (608x44px Spec) -->
+              <button type="submit" class="auth-btn-primary">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Verify OTP</span>
+              </button>
+            </form>
+
+            <div class="auth-links">
+              <a href="#" id="resendOtpBtn">Resend OTP</a>
+              <span class="divider">|</span>
+              <a href="#" data-target-screen="login">Back to Login</a>
+            </div>
+          </div>
+
+          <!-- ==================== SCREEN 5: RESET PASSWORD ==================== -->
+          <div class="auth-screen" id="resetScreen">
+            <h1 class="auth-title">Reset Password</h1>
+            <p class="auth-subtitle">
+              Create a new strong password for your account.
+            </p>
+
+            <form class="auth-form" id="resetForm" novalidate>
+              <!-- Field: New Password -->
+              <div class="form-group">
+                <label class="form-label" for="resetPassword"
+                  >New Password<span class="required-asterisk">*</span></label
+                >
+                <div class="auth-input-wrapper password-input-wrapper">
+                  <input
+                    type="password"
+                    class="auth-input"
+                    id="resetPassword"
+                    placeholder="Enter new password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="toggle-password-btn"
+                    data-for="resetPassword"
+                    aria-label="Show password"
+                  >
+                    <i class="ph ph-eye eye-on-icon"></i>
+                    <i class="ph ph-eye-slash eye-off-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Field: Confirm New Password -->
+              <div class="form-group">
+                <label class="form-label" for="resetConfirmPassword"
+                  >Confirm New Password<span class="required-asterisk"
+                    >*</span
+                  ></label
+                >
+                <div class="auth-input-wrapper password-input-wrapper">
+                  <input
+                    type="password"
+                    class="auth-input"
+                    id="resetConfirmPassword"
+                    placeholder="Confirm new password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="toggle-password-btn"
+                    data-for="resetConfirmPassword"
+                    aria-label="Show password"
+                  >
+                    <i class="ph ph-eye eye-on-icon"></i>
+                    <i class="ph ph-eye-slash eye-off-icon"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Action Button: Reset Password (608x44px Spec) -->
+              <button type="submit" class="auth-btn-primary">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Reset Password</span>
+              </button>
+            </form>
+
+            <div class="auth-links">
+              <a href="#" data-target-screen="login">Back to Login</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Red Toast Notification Container (Matches Reference Screenshot #3) -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Bottom Right Captcha Icon Badge (Matches Reference Screenshots) -->
+    <div class="captcha-badge" title="Protected by reCAPTCHA">
+      <i class="ph ph-shield-check"></i>
+    </div>
+
+    <!-- Application Logic -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

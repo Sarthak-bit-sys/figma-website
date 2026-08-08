@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+  command = ""
+
+[dev]
+  # Netlify Dev will run this command locally when using `netlify dev`.
+  command = ""
+  port = 8888
+
+[[redirects]]
+# Example redirect for single-page apps (uncomment to enable)
+#  from = "/admin/*"
+#  to = "/index.html"
+#  status = 200
